@@ -40,7 +40,7 @@ if (!$hasError) {
     $body = "Name: $guestName \r\nEmail: $guestEmail \n\nSubject: $subject \n\nComments:\n $guestMessage";
     $headers = "From: ".$emailFrom.">\r\nReply-To: ".$guestEmail."";
 
-    $response['success'] = @mail($emailTo, $subject, $body, $headers);
+    $response['success'] = mail($emailTo, $subject, $body, $headers);
     if (!$response['success']) {
         $response['message'] = 'Can\'t send e-mail!';
     }
